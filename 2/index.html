@@ -1,91 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
+    <title>Student-Feedback</title>
+    <style type="text/css">
         body {
-    font-family: sans-serif;
-    background-color: #0b4074;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
-header {
-    font-size: x-large;
-    font-weight: bold;
+h1 {
     text-align: center;
+    color: #333;
 }
 form {
-    background-color: #08d2e9;
-    margin: 50px;
-    padding: 50px;
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-button {
-    margin: 10px;
-    padding: 10px 20px;
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
 }
-label{
-    display: inline-block;
-    min-width: 250px;
+input[type="text"],
+input[type="email"],
+textarea {
+    width: calc(100% - 12px);
+    padding: 7px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+}
+select {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    margin-bottom: 15px;
+}
+textarea {
+    resize: vertical;
+}
+input[type="submit"] {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
     padding: 10px;
-}
-h4{
-    margin-bottom: 10px;
+    background-color: #333; 
+    color: #fff; 
 }
     </style>
-    <title>Feedback Form</title>
 </head>
 <body>
-    <header >
-        Student Feedback Form
-    </header>
-    <main>
-        <form action="/" method="POST">
-            <h3>Student Details</h3>
-            <label>Name</label>
-            <input  />
-            <br />
-            <label>Email Address</label>
-            <input type="email" />
-            <br />
-            <label>USN</label>
-            <input  />
-            <hr />
-            <h3>Feedback Questions</h3>
-            <section>
-                <h4>Was the teacher punctual to the class?</h4>
-                <input type="radio" id="op-1" name="ques-1" />
-                <label for="op-1">Yes</label>
-                <input type="radio" id="op-2" name="ques-1" />
-                <label for="op-2">No</label>
-                <h4>What was your level of satisfaction with the teaching?</h4>
-                <select name="ques-3">
-                    <option>Extemely Satisfying</option>
-                    <option>Satisfying</option>
-                    <option>Agreeable</option>
-                    <option>Unsatisfying</option>
-                    <option>Extremely Unsatisfying</option>
-                </select>
-                <h4>Was the teacher: (Select the applicable checkboxes)</h4>
-                <input type="checkbox" id="ck-1" />
-                <label for="ck-1">Helpful</label>
-                <br />
-                <input type="checkbox" id="ck-2" />
-                <label for="ck-2">Clear and Understandable</label>
-                <br />
-                <input type="checkbox" id="ck-3" />
-                <label for="ck-3">Knowledgeable</label>
-                <br />
-                <input type="checkbox" id="ck-4" />
-                <label for="ck-4">Interactive</label>
-                <br />
-                <h4>Write your suggestions.</h4>
-                <textarea name="suggestions" cols="50" rows="4"></textarea>
-                <h4>Do you want to submit the form?</h4>
-                <input type="checkbox" name="agree" required />
-                <label for="agree">Yes</label>
-            </section>
-            <div >
-                <button>Submit</button>
-                <button type="reset" >Clear</button>
-            </div>
-        </form>
-    </main>
+    <h1>Student-Feedback form</h1>
+    <form>
+        <label for="fname">Full Name:</label>
+        <input type="text" id="fname" name="fullname" placeholder="Your name">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="emailid" placeholder="Your E-mail id">
+        <label for="usn">USN:</label>
+        <input type="text" id="usn" name="USN" placeholder="Your USN">
+        <label for="sem">Select Semester:</label>
+        <select name="sem">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+        <label>Branch:</label>
+        <input type="radio" name="branch" value="CS">Computer Science and Engineering<br>
+        <input type="radio" name="branch" value="IS">Information Science<br>
+        <input type="radio" name="branch" value="EC">Electronics and Communication<br>
+        <input type="radio" name="branch" value="NCB">Non-Circuit Branch<br>
+        <label for="feedback">Feedback:</label>
+        <textarea rows="6" cols="50" name="feedback" placeholder="Your Feedback & Suggestions"></textarea>
+        <label for="req">Send me a copy of this Feedback</label><br>
+        <input type="checkbox" name="req" id="req"><br>
+        <input type="submit" value="Submit">
+    </form>
 </body>
+<footer>
+    <marquee direction="right">&copy; JSS Science and Technology University</marquee>
+</footer>
 </html>
