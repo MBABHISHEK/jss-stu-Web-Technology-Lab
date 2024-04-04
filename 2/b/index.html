@@ -1,27 +1,13 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Two frames Webpages
-        </title>
-    </head>
-    <frameset rows="50% 50%">
-    </frameset cols="50% 50%">
-    <frame src="frame1.html" name="f1">
-    <frame src="frame2.html" name="f2">
-    </frameset>
-    </frameset cols="50% 50%">
-    <frame src="frame3.html" name="f3">
-    <frame src="frame4.html" name="f4">
+<head>
+  <title>Natural Wonders of the World</title>
+</head>
+<frameset cols="20%, 80%">
+  <frame name="links" src="links.html">
+  <frame name="main" src="content.html">
+  <noframes>
+    <body>Your browser does not support frames.</body>
+  </noframes>
 </frameset>
-
-    </frameset>
-    <noframes>
-        <body>
-            <p> Page uses Frames Browser doestnot  support</p>
-        </body>
-    </noframes>
-    <body>
-
-    </body>
 </html>
