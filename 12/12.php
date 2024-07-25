@@ -47,13 +47,12 @@
             $pass = $_POST["password"];
             $file = fopen("login.txt", "r");
 
-            $content = fgets($file);
+            $content = fgets($file); //$content = trim(fgets($file)); is not working 
             if ($content == $uname . ":" . $pass) {
                 echo "alert('Access granted!')";
             } else {
                 echo "alert('Incorrect')";
             }
-        }
         ?>
     </script>
 </body>
