@@ -36,24 +36,26 @@
     <form method="POST">
         <label>Username:</label>
         <input name="username">
-        <label for="password">Password:</label>
+        <label>Password:</label>
         <input type="password" name="password">
-        <button >Login</button>
+        <button type="submit">Login</button>
     </form>
-    <script>
-        <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $uname = $_POST["username"];
-            $pass = $_POST["password"];
-            $file = fopen("login.txt", "r");
 
-            $content = fgets($file); //$content = trim(fgets($file)); is not working 
-            if ($content == $uname . ":" . $pass) {
-                echo "alert('Access granted!')";
-            } else {
-                echo "alert('Incorrect')";
-            }
-        ?>
-    </script>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $uname = $_POST["username"];
+        $pass = $_POST["password"];
+        $file = fopen("text.txt", "r");
+
+        $content = trim(fgets($file));
+        fclose($file);
+
+        if ($content == $uname . ":" . $pass) {
+            echo "<script>alert('Access granted!');</script>";
+        } else {
+            echo "<script>alert('Incorrect');</script>";
+        }
+    }
+    ?>
 </body>
 </html>
